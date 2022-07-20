@@ -1,0 +1,15 @@
+D:\vStudio\EducationApp\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+D:\vStudio\EducationApp\DataAccess\bin\Debug\net6.0\DataAccess.dll
+D:\vStudio\EducationApp\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+D:\vStudio\EducationApp\DataAccess\bin\Debug\net6.0\Core.dll
+D:\vStudio\EducationApp\DataAccess\bin\Debug\net6.0\Core.pdb
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CopyComplete
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.dll
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+D:\vStudio\EducationApp\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
