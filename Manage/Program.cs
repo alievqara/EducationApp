@@ -3,6 +3,7 @@ using Core.Constants;
 using Core.Entities;
 using Core.Helpers;
 using DataAccess.Repository.Implementations;
+using Manage.Controllers;
 
 namespace Manage
 {
@@ -11,6 +12,7 @@ namespace Manage
         public static void Main()
         {
             GroupRepository _groupRepository = new GroupRepository();
+            GroupControllers _groupController = new GroupControllers();
 
             ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Welcome to Education Application");
 
@@ -42,52 +44,50 @@ namespace Manage
                         switch (selectedNumber)
                         {
                             #region Exit
-                            case (int)Options.Exit:
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, "Thanks for using Education Application");
-                                return;
 
+                            case (int)Options.Exit:
+
+                                _groupController.EndApp();
+
+                                return;
                             #endregion
+
                             #region CreateGroup
                             case (int)Options.Create:
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "Pleace Enter Name");
-                                string name = Console.ReadLine();
-                            MaxSize: ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "Pleace Enter Max Size Group");
-                                string size = Console.ReadLine();
-                                int maxSize;
-                                result = int.TryParse(size, out maxSize);
-                                if (result)
-                                {
-                                    Group group = new Group
-                                    {
-                                        Name = name,
-                                        MaxSize = maxSize,
-                                    };
-                                    var createdGroup = _groupRepository.Create(group);
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, $"{createdGroup.Name} is successfully created.");
-
-                                }
-                                else
-                                {
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "Pleace Enter Correct Max Size Group");
-                                    goto MaxSize;
-
-                                }
+                                _groupController.CreateGroup();
                                 break;
                             #endregion
+
+                            #region Update 
+
                             case (int)Options.Update:
+                                _groupController.UpdateGroup();
+
                                 break;
+
+                            #endregion
+
+                            #region Delete
+
                             case (int)Options.Delete:
+                                _groupController.Delete();
                                 break;
+
+                            #endregion
+
+                            #region GetforName
+
                             case (int)Options.GetforName:
+                                _groupController.GetforName();
+
                                 break;
+
+                            #endregion
+
+
                             #region AllEntity
                             case (int)Options.AllEntity:
-                                var groups = _groupRepository.GetAll();
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, "All Group List");
-                                foreach (var group in groups)
-                                {
-                                    Console.WriteLine($"Name: {group.Name}, Max Size: {group.MaxSize}");
-                                }
+                                _groupController.GetAll();
                                 break;
                                 #endregion
                         }
