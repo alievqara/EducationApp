@@ -11,10 +11,10 @@ namespace Manage
     {
         public static void Main()
         {
-            GroupRepository _groupRepository = new GroupRepository();
             GroupControllers _groupController = new GroupControllers();
+            StudentController _studentController = new StudentController();
 
-            ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Welcome to Education Application");
+            ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Welcome to Education System");
 
             Console.WriteLine("------------------------------------------------------------------------------------");
 
@@ -23,11 +23,16 @@ namespace Manage
                 Console.WriteLine("------------------------------------------------------------------------------------");
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Menu");
                 Console.WriteLine("------------------------------------------------------------------------------------");
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "1 - Create");
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "2 - Update");
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "3 - Delete");
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "4 - Get for Name");
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "5 - All Entity");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "1 -  Create Group");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "2 -  Update Group");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "3 -  Delete Group");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "4 -  Get for Name Group");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "5 -  All Group");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "6 -  Add Student");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "7 -  Update Student");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "8 -  Get All Student");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "9 -  Delete Student");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "10 - Get Group Students");
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.White, "0 - Exit");
                 Console.WriteLine("------------------------------------------------------------------------------------");
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Select option: ");
@@ -38,7 +43,7 @@ namespace Manage
                 bool result = int.TryParse(number, out selectedNumber);
                 if (result)
                 {
-                    if (selectedNumber >= 0 && selectedNumber <= 5)
+                    if (selectedNumber >= 0 && selectedNumber <= 10)
                     {
 
                         switch (selectedNumber)
@@ -75,6 +80,12 @@ namespace Manage
 
                             #endregion
 
+                            #region AllEntity
+                            case (int)Options.AllEntity:
+                                _groupController.GetAll();
+                                break;
+                            #endregion
+
                             #region GetforName
 
                             case (int)Options.GetforName:
@@ -84,12 +95,33 @@ namespace Manage
 
                             #endregion
 
+                            #region AddStudent
+                            case (int)Options.AddStudent:
+                                _studentController.AddStudent();
+                                break;
 
-                            #region AllEntity
-                            case (int)Options.AllEntity:
-                                _groupController.GetAll();
+                            #endregion
+
+                            #region Get Group Student
+                            case (int)Options.GetGroupStudents:
+                                _studentController.GetGroupStudents();
+                                break;
+                            #endregion
+
+                            #region Delete Student 
+
+                            case (int)Options.DeleteStudent:
+                                _studentController.Delete();
+                                break;
+                            #endregion
+
+                            #region AllStudent 
+
+                            case (int)Options.AllStudents:
+                                _studentController.GetAll();
                                 break;
                                 #endregion
+
                         }
                     }
                     else

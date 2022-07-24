@@ -105,7 +105,7 @@ namespace Manage.Controllers
             }
             else
             {
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, "Please, enter correct group 'Name' and 'MAx Size'");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, "Please, enter correct group 'Name' and 'Max Size'");
 
             }
 
@@ -115,6 +115,7 @@ namespace Manage.Controllers
 
         #region GetForAll
 
+        
 
         public void GetAll()
         {
@@ -151,7 +152,6 @@ namespace Manage.Controllers
 
 
         #endregion
-
 
         #region GetForName
 

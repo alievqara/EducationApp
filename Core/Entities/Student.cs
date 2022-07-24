@@ -9,11 +9,15 @@ namespace Core.Entities
 {
     public class Student : IEntity
     {
+
         public int ID { get; set; }
 
         public string Name { get; set; }
 
         public string Surname { get; set; }
+
+        public string? FatherName { get; set; }
+        public Group Group { get; set; }
 
         public byte Age { get; set; }
     }

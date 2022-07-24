@@ -9,10 +9,13 @@ namespace Core.Entities
 {
     public class Group : IEntity
     {
+        
         public int ID { get; set; }
 
         public string Name { get; set; }
 
         public int MaxSize { get; set; }
+
+        public int CurretSize { get; set; }
     }
 }

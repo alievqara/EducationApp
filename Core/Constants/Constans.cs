@@ -8,12 +8,19 @@ namespace Core.Constants
 {
     public enum Options
     {
-        Exit = 0,
-        Create = 1,
-        Update = 2,
-        Delete = 3,
-        GetforName = 4,
-        AllEntity = 5,
+        Exit,
+        Create,
+        Update,
+        Delete,
+        GetforName,
+        AllEntity,
+        AddStudent,
+        UpdateStudent,
+        AllStudents,
+        DeleteStudent,
+        GetGroupStudents,
+
+
 
     }
 }

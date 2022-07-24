@@ -11,8 +11,12 @@ namespace DataAccess.Repository.Implementations
 {
     public class StudentRepository : IRepositories<Student>
     {
+        private static int id;
+        
         public Student Create(Student entity)
         {
+            id++;
+            entity.ID = id;
             DbContext.Students.Add(entity);
             return entity;
         }
@@ -54,6 +58,7 @@ namespace DataAccess.Repository.Implementations
                 student.Name = entity.Name;
                 student.Surname = entity.Surname;
                 student.Age = entity.Age;
+                student.Group = entity.Group;
             }
         }
     }
